@@ -97,6 +97,7 @@
   --neon-purple: oklch(0.65 0.25 295);
   --neon-blue: oklch(0.7 0.2 250);
   --neon-pink: oklch(0.72 0.22 340);
+  --success: oklch(0.78 0.17 155);
 
   --gradient-primary: linear-gradient(135deg, oklch(0.78 0.18 200), oklch(0.65 0.25 295));
   --gradient-hero: linear-gradient(135deg, oklch(0.78 0.18 200) 0%, oklch(0.7 0.2 250) 50%, oklch(0.65 0.25 295) 100%);
