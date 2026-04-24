@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cpu, Eye } from "lucide-react";
+import { Cpu, Eye, Github, ExternalLink } from "lucide-react";
 import { Section } from "./Section";
 
 const projects = [
@@ -10,6 +10,8 @@ const projects = [
     description:
       "Implemented gesture recognition for an intuitive UI, optimized grain dispensing algorithms to reduce waste, and ensured precise portion control through sensor integration and data analysis.",
     tags: ["Computer Vision", "IoT", "Sensors", "Python"],
+    github: "https://github.com/",
+    demo: "#",
   },
   {
     icon: Eye,
@@ -18,6 +20,8 @@ const projects = [
     description:
       "Evaluated KNN, Logistic Regression, SVM, Decision Trees, and Random Forest using Python and scikit-learn. Analyzed metrics to optimize accuracy. Presented at International Conference, SA Engineering College (Mar 2024).",
     tags: ["scikit-learn", "ML", "Research", "Python"],
+    github: "https://github.com/",
+    demo: "#",
   },
 ];
 
@@ -62,6 +66,24 @@ export function Projects() {
                     {t}
                   </span>
                 ))}
+              </div>
+              <div className="mt-6 flex items-center gap-3 border-t border-border/60 pt-5">
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted/40 px-3 py-1.5 text-xs font-medium text-foreground/90 transition-all hover:border-primary/60 hover:text-primary"
+                >
+                  <Github size={14} /> Code
+                </a>
+                <a
+                  href={p.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1.5 text-xs font-medium text-foreground transition-all hover:from-primary/40 hover:to-secondary/40"
+                >
+                  <ExternalLink size={14} /> Live Demo
+                </a>
               </div>
             </div>
           </motion.article>
