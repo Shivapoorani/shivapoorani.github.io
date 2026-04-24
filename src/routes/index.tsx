@@ -1,26 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ParticleBackground } from "@/components/portfolio/ParticleBackground";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Experience } from "@/components/portfolio/Experience";
+import { Projects } from "@/components/portfolio/Projects";
+import { Education } from "@/components/portfolio/Education";
+import { Contact } from "@/components/portfolio/Contact";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Shiva Poorani G H — AI Engineer · LLM & RAG Developer" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Shiva Poorani G H — AI Engineer building production-grade LLM and RAG systems with LangChain, Python, and PostgreSQL.",
+      },
+      { property: "og:title", content: "Shiva Poorani G H — AI Engineer" },
+      {
+        property: "og:description",
+        content:
+          "Building production-grade AI systems that scale. LLMs, RAG pipelines, LangChain.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <ParticleBackground />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
+      <footer className="border-t border-border/50 px-6 py-8 text-center text-sm text-muted-foreground">
+        © {new Date().getFullYear()} Shiva Poorani G H · Built with{" "}
+        <span className="text-primary">React</span> &{" "}
+        <span className="text-secondary">Framer Motion</span>
+      </footer>
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
