@@ -5,8 +5,8 @@ import { Section } from "./Section";
 const stats = [
   { icon: GraduationCap, label: "B.Tech AI & DS", value: "CGPA 8.3" },
   { icon: Sparkles, label: "Specialty", value: "LLMs · RAG" },
-  { icon: Briefcase, label: "Experience", value: "1+ Years" },
-  { icon: Rocket, label: "Projects Delivered", value: "2+" },
+  { icon: Briefcase, label: "Experience", value: "7+ Months" },
+  { icon: Rocket, label: "Projects Delivered", value: "5+" },
   { icon: Languages, label: "Languages", value: "EN · TA · FR" },
   { icon: MapPin, label: "Based in", value: "Chennai, India" },
 ];
