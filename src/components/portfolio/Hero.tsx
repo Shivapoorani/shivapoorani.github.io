@@ -70,10 +70,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl"
         >
-          <span className="text-gradient">Shiva Poorani</span>
-          <span className="ml-3 align-middle text-3xl text-foreground/80 md:text-4xl lg:text-5xl">
-            G H
-          </span>
+          <span className="text-gradient">Shiva Poorani G H</span>
         </motion.h1>
 
         <motion.div
