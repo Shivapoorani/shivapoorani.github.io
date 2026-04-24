@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Flame, Zap, Sparkles } from "lucide-react";
 import { Section } from "./Section";
+import { useRole, accentClasses } from "./RoleContext";
 
 const levels = [
   {
@@ -33,12 +34,15 @@ const levels = [
 ];
 
 export function Skills() {
+  const { role } = useRole();
+  const hl = new Set(role.highlightSkills.map((s) => s.toLowerCase()));
+  const a = accentClasses(role.accent);
   return (
     <Section
       id="skills"
       eyebrow="Skills"
       title="The toolkit"
-      subtitle="Grouped by proficiency — honest about where I'm sharpest."
+      subtitle={`Grouped by proficiency. Highlighted pills are most relevant for the ${role.label} role.`}
     >
       <div className="grid gap-6 md:grid-cols-3">
         {levels.map((lvl, i) => (
@@ -63,7 +67,11 @@ export function Skills() {
               {lvl.skills.map((s) => (
                 <span
                   key={s}
-                  className="rounded-full border border-border bg-muted/40 px-3 py-1 text-xs text-foreground/90 transition-all hover:border-primary/60 hover:bg-primary/10 hover:text-primary"
+                  className={`rounded-full border px-3 py-1 text-xs transition-all ${
+                    hl.has(s.toLowerCase())
+                      ? `${a.softBorder} ${a.soft} ${a.text} shadow-[0_0_14px_oklch(0.78_0.18_200/25%)]`
+                      : "border-border bg-muted/40 text-foreground/90 hover:border-primary/60 hover:bg-primary/10 hover:text-primary"
+                  }`}
                 >
                   {s}
                 </span>

@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Download, ArrowDown, Linkedin, Code2, Github } from "lucide-react";
+import { ROLES, useRole, accentClasses } from "./RoleContext";
 
-const ROLES = ["AI Engineer", "LLM Developer", "RAG Architect", "Data Scientist"];
-
-function useTypewriter() {
+function useTypewriter(words: string[]) {
   const [text, setText] = useState("");
   const [idx, setIdx] = useState(0);
   const [del, setDel] = useState(false);
 
   useEffect(() => {
-    const current = ROLES[idx];
+    setText("");
+    setIdx(0);
+    setDel(false);
+  }, [words]);
+
+  useEffect(() => {
+    const current = words[idx % words.length];
     const delay = del ? 50 : 100;
     const t = setTimeout(() => {
       if (!del) {
@@ -22,18 +27,20 @@ function useTypewriter() {
         setText(next);
         if (next === "") {
           setDel(false);
-          setIdx((i) => (i + 1) % ROLES.length);
+          setIdx((i) => (i + 1) % words.length);
         }
       }
     }, delay);
     return () => clearTimeout(t);
-  }, [text, del, idx]);
+  }, [text, del, idx, words]);
 
   return text;
 }
 
 export function Hero() {
-  const role = useTypewriter();
+  const { role, setRoleKey } = useRole();
+  const typed = useTypewriter(role.typewriter);
+  const accent = accentClasses(role.accent);
 
   return (
     <section
@@ -70,23 +77,57 @@ export function Hero() {
         </motion.h1>
 
         <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-6 flex flex-wrap items-center justify-center gap-2"
+          role="tablist"
+          aria-label="Select a role lens"
+        >
+          <span className="mr-1 hidden font-mono text-xs uppercase tracking-wider text-muted-foreground sm:inline">
+            Hire me as:
+          </span>
+          {ROLES.map((r) => {
+            const a = accentClasses(r.accent);
+            const active = r.key === role.key;
+            return (
+              <button
+                key={r.key}
+                onClick={() => setRoleKey(r.key)}
+                role="tab"
+                aria-selected={active}
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all ${
+                  active
+                    ? `${a.softBorder} ${a.soft} ${a.text} shadow-[0_0_18px_oklch(0.78_0.18_200/30%)]`
+                    : "border-border bg-card/40 text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                }`}
+              >
+                <r.icon size={13} />
+                {r.label}
+              </button>
+            );
+          })}
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 flex h-10 items-center justify-center font-mono text-xl text-primary md:text-2xl"
+          className={`mt-8 flex h-10 items-center justify-center font-mono text-xl md:text-2xl ${accent.text}`}
         >
           <span className="text-muted-foreground">{`>`}_</span>
-          <span className="ml-3">{role}</span>
-          <span className="ml-1 inline-block h-6 w-0.5 animate-blink bg-primary" />
+          <span className="ml-3">{typed}</span>
+          <span className={`ml-1 inline-block h-6 w-0.5 animate-blink ${accent.bg}`} />
         </motion.div>
 
         <motion.p
+          key={role.key}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Building production-grade AI systems that scale.
+          {role.tagline}
         </motion.p>
 
         <motion.div

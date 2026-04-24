@@ -10,6 +10,8 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 import { BackToTop } from "@/components/portfolio/BackToTop";
+import { RoleProvider } from "@/components/portfolio/RoleContext";
+import { RolesMatrix } from "@/components/portfolio/RolesMatrix";
 import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
@@ -34,11 +36,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <RoleProvider>
     <div className="relative min-h-screen overflow-x-hidden">
       <ParticleBackground />
       <Navbar />
       <main>
         <Hero />
+        <RolesMatrix />
         <About />
         <WhatIBring />
         <Skills />
@@ -55,5 +59,6 @@ function Index() {
         <span className="text-secondary">Framer Motion</span>
       </footer>
     </div>
+    </RoleProvider>
   );
 }
