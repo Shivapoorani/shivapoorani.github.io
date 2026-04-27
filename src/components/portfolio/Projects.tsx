@@ -14,6 +14,7 @@ import {
   Activity,
   Sparkles,
   Database,
+  BarChart3,
 } from "lucide-react";
 import { Section } from "./Section";
 
@@ -63,6 +64,17 @@ const autotestModules = [
 ];
 
 const academicProjects = [
+  {
+    icon: BarChart3,
+    title: "E-Commerce Sales Trend Analysis",
+    date: "Jan 2025",
+    description:
+      "Cleaned and analyzed a 50,000+ row e-commerce dataset with Python (Pandas, Matplotlib) and SQL — surfaced seasonal purchase patterns and top-performing categories. Built an interactive Tableau dashboard visualizing revenue trends, customer segmentation, and KPIs to turn raw transactional data into actionable business insight.",
+    tags: ["Python", "Pandas", "SQL", "Tableau", "Data Analytics"],
+    github: "https://github.com/shivapoorani",
+    demo: null,
+    badge: "Personal Project",
+  },
   {
     icon: Cpu,
     title: "Smart Kitchen Grain Dispenser with Gesture",

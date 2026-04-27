@@ -17,6 +17,10 @@ const jobs = [
       "Used Cursor for rapid AI prototyping and accelerating solution delivery.",
       "Delivered client-facing AI solutions focused on performance, scalability, and usability.",
       "Achieved improved response accuracy and low-latency performance in production systems.",
+      "Engineered system prompts for RAG chatbots — reduced hallucination rate by ~40%, validated across 500+ test cases using context relevance and answer accuracy metrics.",
+      "Queried PostgreSQL for client usage metrics and built Tableau dashboards tracking RAG pipeline KPIs — saved ~5 hours/week of manual reporting.",
+      "Partnered with client stakeholders to translate business requirements into AI system specs, bridging technical and non-technical teams.",
+      "Resolved a data-ingestion bottleneck by redesigning the retrieval strategy — cut end-to-end processing time by 35% and improved production reliability.",
     ],
   },
   {
