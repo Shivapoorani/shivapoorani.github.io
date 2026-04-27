@@ -71,7 +71,7 @@ const academicProjects = [
     description:
       "Cleaned and analyzed a 50,000+ row e-commerce dataset with Python (Pandas, Matplotlib) and SQL — surfaced seasonal purchase patterns and top-performing categories. Built an interactive Tableau dashboard visualizing revenue trends, customer segmentation, and KPIs to turn raw transactional data into actionable business insight.",
     tags: ["Python", "Pandas", "SQL", "Tableau", "Data Analytics"],
-    github: "https://github.com/shivapoorani",
+    github: "https://github.com/Shivapoorani",
     demo: null,
     badge: "Personal Project",
   },
@@ -82,7 +82,7 @@ const academicProjects = [
     description:
       "Implemented gesture recognition for an intuitive UI, optimized grain dispensing algorithms to reduce waste, and ensured precise portion control through sensor integration and data analysis.",
     tags: ["Computer Vision", "IoT", "Sensors", "Python"],
-    github: "https://github.com/shiva-poorani",
+    github: "https://github.com/Shivapoorani",
     demo: null,
     badge: "College Project",
   },
@@ -93,7 +93,7 @@ const academicProjects = [
     description:
       "Evaluated KNN, Logistic Regression, SVM, Decision Trees, and Random Forest using Python and scikit-learn. Analyzed metrics to optimize accuracy. Presented at International Conference, SA Engineering College (Mar 2024).",
     tags: ["scikit-learn", "ML", "Research", "Python"],
-    github: "https://github.com/shiva-poorani",
+    github: "https://github.com/Shivapoorani",
     demo: null,
     badge: "Research Paper",
   },
