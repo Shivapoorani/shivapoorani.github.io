@@ -20,7 +20,17 @@ const levels = [
     ring: "border-secondary/50",
     glow: "shadow-[0_0_30px_oklch(0.65_0.25_295/30%)]",
     desc: "Comfortable in production. Solve real problems independently.",
-    skills: ["PostgreSQL", "APIs", "SQL", "Machine Learning", "Statistical Modeling", "Cursor"],
+    skills: [
+      "PostgreSQL",
+      "APIs",
+      "SQL",
+      "Data Analytics",
+      "Machine Learning",
+      "Statistical Modeling",
+      "Cursor",
+      "Communication",
+      "Problem-solving",
+    ],
   },
   {
     label: "Familiar",
@@ -29,7 +39,14 @@ const levels = [
     ring: "border-accent/50",
     glow: "shadow-[0_0_30px_oklch(0.7_0.2_250/25%)]",
     desc: "Working knowledge. Can pick up quickly when needed.",
-    skills: ["R Programming", "Tableau", "Data Visualization", "Excel"],
+    skills: [
+      "R Programming",
+      "Tableau",
+      "Data Visualization",
+      "Excel",
+      "Teamwork",
+      "Adaptability",
+    ],
   },
 ];
 

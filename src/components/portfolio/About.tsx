@@ -23,14 +23,16 @@ export function About() {
           className="lg:col-span-3"
         >
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Enthusiastic <span className="text-foreground font-medium">AI Engineer</span> with a
-            B.Tech in Artificial Intelligence & Data Science. Experienced in building and deploying
-            production-grade AI systems using{" "}
-            <span className="text-primary">LLMs, RAG pipelines, and LangChain</span>.
+            Results-driven <span className="text-foreground font-medium">AI Engineer</span> with a
+            B.Tech in Artificial Intelligence & Data Science. I build and ship production-grade AI
+            systems using <span className="text-primary">LLMs, RAG pipelines, and LangChain</span>{" "}
+            — engineering system prompts, designing eval frameworks, and turning client
+            requirements into scalable products.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            Passionate about creating scalable, real-world AI solutions with a strong focus on
-            performance and usability — turning research into reliable, low-latency products.
+            Comfortable across <span className="text-secondary">AI Engineering, Data Analysis,
+            Prompt Engineering, and Business Analysis</span> — proficient in Python, SQL, Tableau,
+            and Excel, and adept at collaborating with stakeholders to drive measurable outcomes.
           </p>
         </motion.div>
 

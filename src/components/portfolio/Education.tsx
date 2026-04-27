@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, BookOpen, Wrench } from "lucide-react";
+import { GraduationCap, Award, BookOpen, Wrench, Trophy, Users } from "lucide-react";
 import { Section } from "./Section";
 
 const education = [
@@ -54,6 +54,29 @@ const languages = [
   { name: "English", level: 95 },
   { name: "Tamil", level: 100 },
   { name: "French", level: 55 },
+];
+
+const extras = [
+  {
+    icon: Trophy,
+    title: "1st Place — Traditional Dance, SIMAM 2022",
+    org: "Saveetha School of Engineering",
+  },
+  {
+    icon: Trophy,
+    title: "1st Place — Kho-Kho, SIMAM 2022",
+    org: "Saveetha School of Engineering",
+  },
+  {
+    icon: Users,
+    title: "Contributor — Connextions, TECHSSE'2 Symposium",
+    org: "Saveetha School of Engineering",
+  },
+  {
+    icon: Users,
+    title: "Team Coordinator — National Conference",
+    org: "Saveetha School of Engineering",
+  },
 ];
 
 export function Education() {
@@ -138,6 +161,30 @@ export function Education() {
                   <p className="text-sm text-muted-foreground">{c.org}</p>
                 </div>
                 <span className="font-mono text-xs text-primary">{c.date}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <h3 className="mb-5 mt-10 flex items-center gap-2 text-lg font-semibold">
+            <Trophy size={20} className="text-primary" /> Extra-Curricular
+          </h3>
+          <div className="space-y-3">
+            {extras.map((e, i) => (
+              <motion.div
+                key={e.title}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="card-gradient border-glow flex items-start gap-4 rounded-2xl p-4"
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                  <e.icon size={16} />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold text-foreground">{e.title}</h4>
+                  <p className="text-xs text-muted-foreground">{e.org}</p>
+                </div>
               </motion.div>
             ))}
           </div>
