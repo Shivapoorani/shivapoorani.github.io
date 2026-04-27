@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Download, ArrowDown, Linkedin, Code2, Github } from "lucide-react";
+import { Mail, ArrowDown, Linkedin, Code2, Github } from "lucide-react";
 import { ROLES, useRole, accentClasses } from "./RoleContext";
 
 function useTypewriter(words: string[]) {
@@ -140,14 +140,6 @@ export function Hero() {
             <Mail size={18} />
             Contact Me
           </a>
-          <a
-            href="/Shiva_Poorani_Resume.pdf"
-            download
-            className="group inline-flex items-center gap-2 rounded-full border border-secondary/50 bg-secondary/10 px-8 py-3.5 font-medium text-foreground backdrop-blur transition-all hover:border-secondary hover:bg-secondary/20 hover:shadow-[0_0_30px_oklch(0.65_0.25_295/40%)]"
-          >
-            <Download size={18} />
-            Download Resume
-          </a>
         </motion.div>
 
         <motion.div
@@ -159,7 +151,7 @@ export function Hero() {
           {[
             { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/shiva-poorani-a81a00228/" },
             { icon: Code2, label: "LeetCode", href: "https://leetcode.com/u/shiva_poorani/" },
-            { icon: Github, label: "GitHub", href: "https://github.com/shiva-poorani" },
+            { icon: Github, label: "GitHub", href: "https://github.com/Shivapoorani" },
             { icon: Mail, label: "Email", href: "mailto:shivaspl164@gmail.com" },
           ].map((s) => (
             <a
