@@ -33,8 +33,8 @@ const links = [
   {
     icon: Github,
     label: "GitHub",
-    value: "shiva-poorani",
-    href: "https://github.com/shiva-poorani",
+    value: "Shivapoorani",
+    href: "https://github.com/Shivapoorani",
   },
 ];
 
